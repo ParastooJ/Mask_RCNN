@@ -1,0 +1,1 @@
+nvidia-docker run --rm --name maskrcnn -v /media/mahaling/SANDISC/PCB_Metal:/root/Mask_RCNN/datasets/PCB_Metal -v /home/mahaling/Dropbox/Mask_RCNN:/root/Mask_RCNN -it -p 8888:8888 detector:latest  bash
