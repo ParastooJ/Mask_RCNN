@@ -306,7 +306,8 @@ class Dataset(object):
         self.class_names = [clean_name(c["name"]) for c in self.class_info]
         self.num_images = len(self.image_info)
         self._image_ids = np.arange(self.num_images)
-
+        #self._image_ids = [self.image_info[i]['id'] for i in range(len(self.image_info))]
+        
         # Mapping from source class and image IDs to internal IDs
         self.class_from_source_map = {"{}.{}".format(info['source'], info['id']): id
                                       for info, id in zip(self.class_info, self.class_ids)}
@@ -318,6 +319,7 @@ class Dataset(object):
         self.source_class_ids = {}
         # Loop over datasets
         for source in self.sources:
+            print(source)
             self.source_class_ids[source] = []
             # Find classes that belong to this dataset
             for i, info in enumerate(self.class_info):

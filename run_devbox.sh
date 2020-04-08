@@ -1,0 +1,1 @@
+nvidia-docker run --rm --name detector -v /home/mahalingamg/Desktop/PCB/METAL_UNCW:/root/detector/datasets/PCB_Metal -v /home/mahalingamg/Desktop/detector:/root/detector -it -p 8888:8888 detector:latest  bash
